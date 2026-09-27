@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Auto Klip Video</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="wrap">
+    <h1>🎬 Auto Klip Video</h1>
+    <p class="sub">Upload video contoh gaya editan, lalu upload video yang mau diklip. Sistem otomatis meniru irama potongan &amp; warna dari contoh.</p>
+
+    <section class="card">
+      <h2>1. Video Referensi / Contoh Gaya</h2>
+      <input type="file" id="refInput" accept="video/*" />
+      <button id="analyzeBtn">Analisis Gaya</button>
+      <div id="profileBox" class="profile-box hidden"></div>
+    </section>
+
+    <section class="card">
+      <h2>2. Video yang Akan Diklip</h2>
+      <input type="file" id="targetInput" accept="video/*" />
+      <label class="dur-label">Durasi target klip (detik):
+        <input type="number" id="durationInput" value="30" min="5" max="180" />
+      </label>
+      <button id="generateBtn" disabled>Buat Klip Otomatis</button>
+      <div id="status" class="status"></div>
+    </section>
+
+    <section class="card result hidden" id="resultCard">
+      <h2>Hasil</h2>
+      <video id="resultVideo" controls></video>
+      <a id="downloadLink" download>Download Klip</a>
+    </section>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
